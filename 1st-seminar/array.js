@@ -10,7 +10,7 @@ let arr2 = new Array(1, 2, 3, 4, 5);
 console.log(arr2);
 console.log(typeof arr2);
 
-let arr3 = ["최영훈", 1, 2, 3, null, { name: "yh", age: 26 }];
+let arr3 = ["김우영", 1, 2, 3, null, { name: "wooyeong", age: 25 }];
 console.log(arr3);
 console.log(typeof arr3);
 

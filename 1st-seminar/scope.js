@@ -1,17 +1,18 @@
-// Block Scope
+// Function Scope
 // var
 if (true) {
     var x = "var";
   }
   console.log(`var: ${x}`);
   
-  // let or const
-  if (true) {
-    let y = "let";
-    const z = "const";
-  }
-  console.log(`let: ${y}`);
-  console.log(`let: ${z}`);
+  // Block Scope
+  // // let or const
+  // if (true) {
+  //   let y = "let";
+  //   const z = "const";
+  // }
+  // console.log(`let: ${y}`);
+  // console.log(`let: ${z}`);
   
   // Function Scope
   // var is inaccessible from outside of the function
