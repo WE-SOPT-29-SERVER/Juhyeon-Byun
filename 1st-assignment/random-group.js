@@ -40,15 +40,21 @@ const members = [
     { name: "허유정", part: "Server", group: "YB" },
 ];
 
-console.log(members.length);
-let ybNum = 0;
-let obNum = 0;
+console.log("서버 파트 총 인원: " + members.length);
+let groupNum = Math.ceil(members.length / 4);
+console.log("총 그룹 수: " + groupNum);
+
+let ybNum = 0; // yb 총 인원
+let obNum = 0; // ob 총 인원
 members.forEach(member => {
-    if (member.group === "YB") {
+    if (member.group === "YB") { // YB인 경우
         ybNum++;
     }
-    else {
+    else { // OB인 경우
         obNum++;
     }
 });
 console.log(ybNum, obNum);
+
+function randomNum(min, max){ var randNum = Math.floor(Math.random()*(max-min+1)) + min; return randNum; } // 랜덤 수
+randomNum(0, ybNum - 1);
