@@ -42,17 +42,13 @@ console.log("서버 파트 총 인원: " + members.length);
 let groupNum = Math.ceil(members.length / 4);
 console.log("총 그룹 수(최대 4명): " + groupNum);
 
-let ybNum = 0; // yb 총 인원
-let obNum = 0; // ob 총 인원
 let ybList = []; // yb 리스트
 let obList = []; // ob 리스트
 members.forEach(member => {
     if (member.group === "YB") { // YB인 경우
-        ybNum++;
         ybList.push(member.name);
     }
     else { // OB인 경우
-        obNum++;
         obList.push(member.name);
     }
 });
@@ -68,23 +64,20 @@ for (let i = 0; i < groupNum; i++) {
     seminarGroup.push([]);
 }
 
-for (let i = 0; i < groupNum; i++) { // ob 팀 배정
-    if (obList.length === 0) {
-        break;
+const grouping = (groupList) => { // 팀 배정
+    for (let i = 0; i < groupNum; i++) { 
+        if (groupList.length === 0) {
+            break;
+        }
+        if (seminarGroup[i].length === 4) { // 최대 4명
+            continue;
+        }
+        seminarGroup[i].push(groupList.pop());
+        if (i === (groupNum - 1)) { i = -1; }
     }
-    seminarGroup[i].push(obList.pop());
-    if (i === (groupNum - 1)) { i = -1; }
-}
+};
 
-for (let i = 0; i < groupNum; i++) { // yb 팀 배정
-    if (ybList.length === 0) {
-        break;
-    }
-    if (seminarGroup[i].length === 4) {
-        continue;
-    }
-    seminarGroup[i].push(ybList.pop());
-    if (i === (groupNum - 1)) { i = -1; }
-}
+grouping(obList);
+grouping(ybList);
 
 console.log(seminarGroup);
