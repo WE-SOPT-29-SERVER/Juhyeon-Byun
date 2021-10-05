@@ -1,5 +1,3 @@
-// 조건: OB와 YB 비율 오차범위를 최소화 한다.
-
 const members = [
     { name: "강한희", part: "Server", group: "OB" },
     { name: "고성용", part: "Server", group: "OB" },
@@ -42,19 +40,51 @@ const members = [
 
 console.log("서버 파트 총 인원: " + members.length);
 let groupNum = Math.ceil(members.length / 4);
-console.log("총 그룹 수: " + groupNum);
+console.log("총 그룹 수(최대 4명): " + groupNum);
 
 let ybNum = 0; // yb 총 인원
 let obNum = 0; // ob 총 인원
+let ybList = []; // yb 리스트
+let obList = []; // ob 리스트
 members.forEach(member => {
     if (member.group === "YB") { // YB인 경우
         ybNum++;
+        ybList.push(member.name);
     }
     else { // OB인 경우
         obNum++;
+        obList.push(member.name);
     }
 });
-console.log(ybNum, obNum);
 
-function randomNum(min, max){ var randNum = Math.floor(Math.random()*(max-min+1)) + min; return randNum; } // 랜덤 수
-randomNum(0, ybNum - 1);
+function shuffle(array) { array.sort(() => Math.random() - 0.5); } // 리스트 섞기
+
+shuffle(ybList); // yb 21명 무작위로 섞기
+shuffle(obList); // ob 16명 무작위로 섞기
+
+// ob 먼저 한 명씩 배치, 이후 yb 배치
+let seminarGroup = [];
+for (let i = 0; i < groupNum; i++) {
+    seminarGroup.push([]);
+}
+
+for (let i = 0; i < groupNum; i++) { // ob 팀 배정
+    if (obList.length === 0) {
+        break;
+    }
+    seminarGroup[i].push(obList.pop());
+    if (i === (groupNum - 1)) { i = -1; }
+}
+
+for (let i = 0; i < groupNum; i++) { // yb 팀 배정
+    if (ybList.length === 0) {
+        break;
+    }
+    if (seminarGroup[i].length === 4) {
+        continue;
+    }
+    seminarGroup[i].push(ybList.pop());
+    if (i === (groupNum - 1)) { i = -1; }
+}
+
+console.log(seminarGroup);
