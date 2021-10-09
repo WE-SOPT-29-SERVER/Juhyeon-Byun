@@ -7,8 +7,8 @@
 
 | Week  |            Contents            |   Date   | Note |
 | :---: | :----------------------------: | :------: | :--: |
-| 1주차 |    Javascript, NodeJS, git     | 20/10/02 |  ✅   |
-| 2주차 | Express, HTTP, 비동기 흐름제어 | 20/10/09 |      |
+| 1주차 |    Javascript, NodeJS, git     | 20/10/02 |  ✅  |
+| 2주차 | Express, HTTP, 비동기 흐름제어 | 20/10/09 |  ✅  |
 | 3주차 |  DB 설계, SQL, REST(ful) API   | 20/10/23 |      |
 | 4주차 |            Firebase            | 20/10/30 |      |
 | 5주차 |         API 제작 실전          | 20/11/13 |      |
