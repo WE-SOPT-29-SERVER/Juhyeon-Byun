@@ -1,7 +1,7 @@
-const util = require("../lib/util");
-const statusCode = require("../constants/statusCode");
-const responseMessage = require("../constants/responseMessage");
-const users = require("../dbMocup/user");
+const util = require("../../lib/util");
+const statusCode = require("../../constants/statusCode");
+const responseMessage = require("../../constants/responseMessage");
+const users = require("../../dbMocup/user");
 
 module.exports = async(req, res) => {
     const { id, password } = req.body;
