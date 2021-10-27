@@ -37,7 +37,7 @@ module.exports = async(req, res) => {
     res.status(statusCode.OK)
     .send(util.success(
             statusCode.OK,
-            responseMessage.READ_PROFILE_SUCCESS,
+            responseMessage.CREATED_USER,
             newUser
             ));
 }
