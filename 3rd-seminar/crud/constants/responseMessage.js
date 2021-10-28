@@ -21,6 +21,6 @@ module.exports = {
     // 게시글
     GET_POST_SUCCESS: "게시글 조회 성공",
     GET_POST_FAIL: "게시글 조회 실패",
-    CREATE_POST_SUCCESS: "게시글 생성 성공",
+    CREATEED_POST: "게시글 생성 성공",
     NO_POST_ID: "해당 게시글 번호가 없습니다.",
 };
