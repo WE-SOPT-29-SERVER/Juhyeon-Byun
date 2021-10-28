@@ -34,6 +34,8 @@ module.exports = async(req, res) => {
         email,
     };
 
+    users.push(newUser);
+
     res.status(statusCode.OK)
     .send(util.success(
             statusCode.OK,
