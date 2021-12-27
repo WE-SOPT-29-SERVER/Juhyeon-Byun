@@ -1,4 +1,4 @@
-const members = [
+module.exports = [
   { name: "강한희", part: "Server", group: "OB" },
   { name: "고성용", part: "Server", group: "OB" },
   { name: "구건모", part: "Server", group: "YB" },
